@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_participant"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:elevation="1dp">
+
+    <!--Contains all of the informtion, splits card between picture and information-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <!--profile picture -->
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/peer_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:maxHeight="80dp"
+            android:maxWidth="80dp"
+            android:scaleType="centerCrop"
+            android:clickable="false"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@drawable/add_photo"/>
+
+        <!--Layout for text information about update -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/peer_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/participantNameCardview"
+                android:text="Peer Name"/>
+
+            <TextView
+                android:id="@+id/peer_last_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Last Contact"/>
+
+            <Button
+                android:id="@+id/peer_sync_btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Connect &amp; Sync"
+                style="@style/defaultButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"/>
+
+            <!--<Button
+            android:id="@+id/peer_participant_btn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Pull Participant Content"
+            style="@style/defaultButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"/>-->
+
+            <Button
+                android:id="@+id/peer_hello_btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Send 'HELLO'"
+                style="@style/defaultButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    
+
+</android.support.v7.widget.CardView>
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_review_new_participant_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:focusable="false"
+    tools:context="com.nilepoint.monitorevaluatemobile.update.ReviewNewParticipantActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <include
+            layout="@layout/app_bar_transparent"
+            android:id="@+id/profile_review_header_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:popupTheme="?attr/actionBarPopupTheme"/>
+
+    <!-- Top card with button for photo -->
+    <LinearLayout
+        android:id="@+id/profile_review_header"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:theme="@style/reviewProfileHeaderText"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:id="@+id/profile_photo_display"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:context="com.nilepoint.monitorevaluatemobile.persistence.ReviewNewParticipantActivity"/>
+
+
+        <!-- TODO color this button and take out the text -->
+        <ImageButton
+            android:id="@+id/review_profile_add_photo_button"
+            android:src="@drawable/add_photo"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/review_profile_add_photo_text"
+            android:text="Add a Photo"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- TODO remove hardcoded text for some default -->
+    <TextView
+        android:id="@+id/review_profile_name"
+        android:text="Participant Name"
+        android:theme="@style/participantNameProfile"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/review_profile_id"
+        android:text="@string/defualt_participant_code"
+        android:theme="@style/participantIdProfile"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/review_profile_info_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="false"
+        android:focusable="false"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <Button
+        android:id="@+id/review_profile_done"
+        android:layout_gravity="center"
+        android:text="Done"
+        android:theme="@style/defaultButton"
+        android:layout_width="200dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <!-- TODO create a cardview for all of the informaton about the update - that way it can be scaled and info ccan be changed-->
+
+</android.support.v4.widget.NestedScrollView>

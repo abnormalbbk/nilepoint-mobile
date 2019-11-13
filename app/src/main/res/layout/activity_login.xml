@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorWhite"
+    tools:context="com.nilepoint.monitorevaluatemobile.LoginActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/toolbar_home_logo"
+        android:id="@+id/toolbar_title" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/user_options_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:layout_marginTop="10dp"
+        />
+<!--
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/activity_login_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fh_w_logo_lt"
+        android:layout_marginLeft="@dimen/activity_login_relative_margin"
+        android:layout_marginRight="@dimen/activity_login_relative_margin"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentTop="true" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/activity_login_username"
+        style="@style/defaultTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/LoginActivity_username"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/activity_login_logo"
+        android:layout_alignStart="@+id/activity_login_logo" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_login_signin_button"
+        style="@style/defaultButton"
+        android:layout_width="@dimen/activity_login_signup_button"
+        android:text="@string/LoginActivity_button"
+        android:layout_marginLeft="@dimen/activity_login_relative_margin"
+        android:layout_marginRight="@dimen/activity_login_relative_margin"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/activity_login_username"
+        android:layout_centerHorizontal="true" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/activity_login_infotext"
+        style="@style/defaultInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LoginActivity_forgotContent"
+        android:layout_marginLeft="@dimen/activity_login_relative_margin"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/activity_login_signin_button"
+        android:layout_alignStart="@+id/activity_login_username" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/activity_login_contact_link"
+        style="@style/defaultLinkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:textColor="@color/colorLinkText"
+        android:text="@string/LoginActivity_help_link"
+        android:layout_alignBottom="@+id/activity_login_infotext"
+        android:layout_alignEnd="@+id/activity_login_infotext"
+        android:layout_marginEnd="12dp" />
+
+-->
+</LinearLayout>

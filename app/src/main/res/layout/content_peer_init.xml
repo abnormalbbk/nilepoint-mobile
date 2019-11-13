@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.nilepoint.monitorevaluatemobile.init.DataSyncActivity"
+    tools:showIn="@layout/activity_peer_init">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="DTN Status"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"/>
+        <TextView
+            android:text="DTN Status"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:id="@+id/dtn_status"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Participant Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/participant_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/participant_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Participant Photo Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/participant_photo_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/participant_photo_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Household Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/household_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/household_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Area Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/area_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/area_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Group Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_width="0dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/group_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Project Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/project_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/project_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Activities Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/activities_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/activities_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Participant Activity Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/p_activities_count_label"
+            android:layout_weight=".8" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/p_activities_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Activity Photo Count"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_photo_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text="0"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/activity_photo_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/clear_data_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Clear Data"/>
+
+    <TextView
+        android:text="Detected Peers"
+        android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerlabel"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/peer_list"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+</LinearLayout>

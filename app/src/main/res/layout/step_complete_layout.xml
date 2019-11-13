@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/new_user_complete_content"
+        android:text="@string/wizard_complete_content"
+        android:lineSpacingExtra="5dp"
+        android:layout_margin="@dimen/new_user_flow_text_top"
+        android:layout_marginTop="@dimen/new_user_flow_text_top"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:theme="@style/newUserText"/>
+
+</LinearLayout>

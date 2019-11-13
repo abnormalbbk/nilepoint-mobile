@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Fields for name entry field TODO use resource for hinting, add underline for input fields-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/new_user_editText_top"
+        android:theme="@style/newUserEditText"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/oauth_msg"
+            android:text="Downloading participants, groups, areas and projects. This may take some time. A done button will be shown when this is complete."
+            android:textSize="14dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="@dimen/new_user_flow_text_top"/>
+
+
+        <EditText
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="none"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_msg"
+            android:text="Progress:"
+            android:textSize="14dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="5dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:progress="0"/>
+
+        <Button
+            android:id="@+id/oauth_done_button"
+            android:text="Done"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            style="@style/defaultButton"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

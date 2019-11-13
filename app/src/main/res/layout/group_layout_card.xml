@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_group"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:elevation="1dp">
+
+    <!--Contains all of the informtion, splits card between picture and information-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <!--profile picture -->
+       <!-- <ImageView
+            android:id="@+id/list_group_photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
+            android:scaleType="centerCrop"
+            android:clickable="false"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@android:color/holo_purple"
+            android:src="@drawable/ic_account_circle_white_24dp"/> -->
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circular_background"
+            android:backgroundTint="@color/bugsee_dialog_button_clicked_color"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:text="GN"
+            android:layout_marginRight="10dp"
+            android:id="@+id/group_icon_view"/>
+
+        <!--Layout for text information about update -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/list_group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:theme="@style/participantNameCardview"
+                android:text="Group Name"/>
+            <TextView
+                android:id="@+id/list_group_community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Community"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

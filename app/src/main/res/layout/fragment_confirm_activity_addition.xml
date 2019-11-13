@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nilepoint.monitorevaluatemobile.participant.SelectParticipantFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/confirm_activity_header"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@color/colorButtonPrimary"
+            android:layout_height="100dp">
+
+            <TextView
+                android:id="@+id/confirm_activity_heading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
+                android:text="Training Attendance Saved For [Lesson Name]"/>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/select_participant_or_group_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

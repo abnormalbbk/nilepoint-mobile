@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Bluetooth Layer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_lbl"
+            android:layout_weight=".7" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/bt_toggle_slider"
+            android:layout_weight=".3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="TCP Layer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tcp_layer"
+            android:layout_weight=".7" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/tcp_toggle_slider"
+            android:layout_weight=".3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="AMQP Layer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/amqp_layer"
+            android:layout_weight=".7" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/amqp_toggle_slider"
+            android:layout_weight=".3" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Last Contact (Server)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/last_contact_amqp"
+            android:layout_weight=".3" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/last_contact_amqp_value"
+            android:layout_weight=".7" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Last Contact (Peer)"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/last_contact_peer"
+            android:layout_weight=".3" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/last_contact_peer_value"
+            android:layout_weight=".7" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Participant Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/participant_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/participant_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Household Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/household_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/household_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Area Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/area_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/area_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Group Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_width="0dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/group_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Project Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/project_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/project_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Activities Count"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/activities_count_label"
+            android:layout_weight=".5" />
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20dp"
+            android:textAlignment="viewEnd"
+            android:id="@+id/activities_count_value"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+</LinearLayout>

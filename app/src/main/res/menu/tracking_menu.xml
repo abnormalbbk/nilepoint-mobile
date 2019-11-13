@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_participant"
+        android:orderInCategory="100"
+        android:title="@string/add_participant"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/remove_participant"
+        android:orderInCategory="110"
+        android:title="@string/remove_participant"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/tracking_done"
+        android:orderInCategory="120"
+        android:title="@string/done"
+        app:showAsAction="collapseActionView"/>
+
+</menu>

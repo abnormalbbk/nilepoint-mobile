@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp">
+
+    <!--Store the elements here and then only display the element in the step to which it belongs.-->
+
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_text_new_user"
+        android:text="Placeholder text!!!!"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"/>
+
+    <!-- Dropdown layout for dropdown selectors - populated on the fly depending on the screen from Realm-->
+    <android.support.v7.widget.AppCompatSpinner
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_new_user">
+    </android.support.v7.widget.AppCompatSpinner>
+
+
+
+    <!--Camera Button for add photo step and for text-->
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_text_new_user_2"
+        android:text="Placeholder text!!!!"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/new_user_add_photo_button"
+        android:src="@drawable/ic_photo_camera_white_36dp"
+        android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user_add_photo_text"
+            android:text="Add a Photo"
+            />
+
+    </LinearLayout>
+</LinearLayout>

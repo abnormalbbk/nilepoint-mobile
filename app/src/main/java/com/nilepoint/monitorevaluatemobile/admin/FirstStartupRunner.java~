@@ -1,0 +1,47 @@
+package com.nilepoint.monitorevaluatemobile.admin;
+
+import android.os.Build;
+
+import com.nilepoint.api.MobileDevice;
+<<<<<<< HEAD
+import com.nilepoint.model.Device;
+import com.nilepoint.model.Setting;
+import com.nilepoint.monitorevaluatemobile.persistence.Environment;
+=======
+>>>>>>> 4cee1ac8f466dae06ee93878a1ef42cc61600378
+import com.nilepoint.monitorevaluatemobile.settings.DTNSettingsActivity;
+import com.nilepoint.monitorevaluatemobile.settings.SettingsMixin;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import io.paperdb.Paper;
+
+/**
+ * Class that will handle all first startup workflow for the app.
+ *
+ */
+
+public class FirstStartupRunner extends SettingsMixin {
+
+    public boolean isFirstStartup(){
+        // if there's no device ID this is the first boot.
+        return Paper.book().exist("device.id") == false;
+    }
+
+    public void startup(){
+        createDefaults();
+    }
+
+    public void startupTest(){
+        startup();
+    }
+
+    public void createDefaults(){
+        set(DTNSettingsActivity.AMQP_LAYER_ACTIVE_LABEL, "true");
+        set(DTNSettingsActivity.TCP_LAYER_ACTIVE_LABEL, "false");
+        set(DTNSettingsActivity.BT_LAYER_ACTIVE_LABEL, "true");
+    }
+
+}

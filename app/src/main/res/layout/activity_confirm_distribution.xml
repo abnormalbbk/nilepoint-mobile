@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_profile_participants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:isScrollContainer="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/participant_profile_header"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:elevation="4dp"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/participant_profile_picture"
+                android:clickable="false"
+                android:src="@drawable/add_photo"
+                android:visibility="gone"
+                android:contentDescription=""
+                android:scaleType="centerCrop"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <ImageView
+                android:id="@+id/participant_profile_picture_add"
+                android:clickable="true"
+                android:src="@drawable/add_photo"
+                android:contentDescription="button to add photo to the update"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/participant_profile_add_photo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/newUserText"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Add a photo"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/participant_profile_name"
+                android:text="first name last name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/participantNameProfile"/>
+
+            <TextView
+                android:id="@+id/participant_profile_ID"
+                android:text="Id no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/participantIdProfile"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/distribution_list_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:isScrollContainer="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+        <Button
+            android:id="@+id/receive_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            style="@style/defaultButton"
+            android:text="@string/receive"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nilepoint.monitorevaluatemobile.participant.SelectParticipantFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <include
+        layout="@layout/client_searchbar"
+        android:id="@+id/select_participant_searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/select_participant_or_group_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:isScrollContainer="false"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+        <Button
+            android:id="@+id/done_select_participants_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/defaultButton"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="@string/done" />
+
+    </LinearLayout>
+
+</FrameLayout>

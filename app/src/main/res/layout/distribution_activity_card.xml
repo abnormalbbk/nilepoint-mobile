@@ -1,0 +1,141 @@
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_home"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginBottom="2dp"
+
+    android:layout_margin="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/name_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/lbl_name"
+                android:text="Beneficiary"
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="16dp"
+                android:layout_weight="0.7"/>
+
+            <TextView
+                android:id="@+id/value_name"
+                android:text=""
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="0.3"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/type_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/lbl_type"
+                android:text="Type"
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_weight="0.2"/>
+
+            <TextView
+                android:id="@+id/value_type"
+                android:text=""
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="0.6"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/unit_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/lbl_unit"
+                android:text="Unit"
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_weight="0.2"/>
+
+            <TextView
+                android:id="@+id/value_unit"
+                android:text=""
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="0.6"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/quantity_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/lbl_quantity"
+                android:text="Quantity"
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_weight="0.2"/>
+
+            <TextView
+                android:id="@+id/value_quantity"
+                android:text="0.0"
+                android:layout_gravity="center"
+                android:theme="@style/ImageTextCardviewText"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="0.6"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

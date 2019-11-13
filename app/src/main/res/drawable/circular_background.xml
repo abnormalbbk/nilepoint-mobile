@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid
+        android:color="@color/bugsee_screenshot_label_blue_color"/>
+    <size
+    android:width="120dp"
+    android:height="120dp" />
+
+    <corners
+        android:bottomLeftRadius="65dp"
+        android:bottomRightRadius="65dp"
+        android:topLeftRadius="65dp"
+        android:topRightRadius="65dp" />
+
+</shape>

@@ -1,0 +1,28 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- LoginActivity dimens -->
+    <dimen name="activity_login_relative_margin">20dp</dimen>
+    <dimen name="activity_login_signup_button">250dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. (For navigation menu) -->
+    <dimen name="nav_header_vertical_spacing">7dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="design_navigation_separator_vertical_padding">0dp</dimen>
+
+    <dimen name="activity_home_button_margin">5dp</dimen>
+
+    <!-- new user -->
+    <dimen name="new_user_flow_text_top">30dp</dimen>
+    <dimen name="new_user_editText_top">15dp</dimen>
+    <dimen name="new_user_camera_margin">50sp</dimen>
+
+    <!-- consent screens -->
+    <dimen name="consent_content_margin">20dp</dimen>
+
+    <!--Text Sizes-->
+    <dimen name="informational_text_size">20dp</dimen>
+</resources>

@@ -1,0 +1,298 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="android:buttonStyle">@style/defaultButton</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <!--For the preferenceFragment-->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:listDivider">@color/colorDivider</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/MyDialogBoxTheme</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme.AppBarOverlay">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+    </style>
+
+    <style name="MyDialogBoxTheme" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:colorAccent">@color/colorButtonPrimary</item>
+        <item name="android:clickable">@color/colorButtonPrimary</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+        <item name="android:colorAccent">@color/colorButtonPrimary</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/colorButtonPrimary</item>
+        <item name="android:colorAccent">@color/colorButtonPrimary</item>
+        <item name="android:clickable">@color/colorButtonPrimary</item>
+    </style>
+
+    <style name="appToolbar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:background">@color/newUserActionBarBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!--Styling for new user flow components -->
+    <style name="newUserText" parent="AlertDialog.AppCompat.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/informational_text_size</item>
+        <item name="android:layout_marginTop">@dimen/new_user_flow_text_top</item>
+        <item name="android:layout_marginLeft">@dimen/new_user_flow_text_top</item>
+
+    </style>
+
+
+    <!-- spinner style for new user flow -->
+    <style name="spinnerStyling" parent="@style/Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/activity_vertical_margin</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:dropDownVerticalOffset">15dp</item>
+        <item name="android:itemTextAppearance">@layout/support_simple_spinner_dropdown_item</item>
+
+    </style>
+
+    <!-- Default styling for text input form-->
+    <style name="defaultTextInput" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:tint">@color/colorPrimary</item>
+        <item name="android:hint">@color/colorHintText</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <!--Review Participant styles -->
+    <style name="drawerItemtext">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <!--Default styling for all buttons. Does not include width since this changes in activities-->
+    <style name="defaultButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:background">@drawable/buttonshape</item>
+        <item name="android:colorAccent">@color/colorButtonPrimary</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:shadowColor">@color/colorShadowColor</item>
+    </style>
+
+    <!-- Styling for informational text-->
+    <style name="defaultInfoText">
+        <item name="android:textColor">@color/colorInfoText</item>
+        <item name="android:textSize">@dimen/informational_text_size</item>
+    </style>
+
+    <!--Review Participant styles -->
+    <style name="reviewContentText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <!-- Homepage button text style-->
+    <style name="homePageCardviewText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="ImageTextCardviewText">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <!-- Styling for buttons on homepage, one for right and one for left, in case list expands -->
+    <style name="homeActivityButtonRight" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">0dp</item>
+    </style>
+
+    <style name="homeActivityButtonLeft" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+    </style>
+
+    <!-- Styling for new user screens -->
+    <style name="newUserActivityScreens" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/newUserColorBackground</item>
+        <item name="android:actionBarItemBackground">@color/newUserActionBarBackground</item>
+        <item name="android:textColorHint">@color/newUserTextColorHint</item>
+        <item name="android:buttonTint">@color/colorButtonPrimary</item>
+    </style>
+
+    <style name="newUserEditText">
+        <item name="android:textColorHint">@color/newUserEditText</item>
+        <item name="android:backgroundTint">@color/newUserEditText</item>
+        <item name="android:layout_marginTop">@dimen/new_user_editText_top</item>
+        <item name="android:textColor">@color/newUserEditText</item>
+    </style>
+
+
+    <!--Styles for find update card -->
+    <style name="participantNameCardview">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="participantPhoneCardview">
+        <item name="android:textColor">@color/colorLinkText</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- Divider for cardviews -->
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <!-- Divider for buttons -->
+    <style name="ButtonDivider">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:width">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+
+    <!-- Styles for each TextView type, as specified in the styleguide -->
+    <style name="defaultLinkText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorLinkText</item>
+        <item name="android:textSize">@dimen/informational_text_size</item>
+    </style>
+
+    <!-- Styling for the transparent action bar in the update profile -->
+    <style name="transparentActionBar" parent="@android:style/Widget.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <!-- Buttons for the profile page -->
+    <style name="profileButtons" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@color/colorHintText</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- Text styles for profile view -->
+    <style name="participantNameProfile">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="participantReviewHeadingText">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="participantIdProfile">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="viewpagerButtonsContainer">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="participantActivityHeading">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Tracked Activity cardview styles -->
+    <style name="activityCardViewTimestamp">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="activityCardViewDetails">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="activityUpdatedBy">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="consentContentText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <!-- Review update activity styles -->
+    <style name="reviewProfileHeaderText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <!-- Form activity title bar style -->
+    <style name="formActivityTitleBar">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_height">56dp</item> <!-- standard action bar size -->
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <!--Barcode activity styles-->
+    <style name="barcodeScannerStyle">
+        <item name="android:textColor">@color/colorButtonPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <!--participant add from profile-->
+    <style name="hhMembersName">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="hhMembersRelationship">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+
+    <!-- Toolbar styles -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Items to add to the menu go here-->
+    </style>
+
+</resources>

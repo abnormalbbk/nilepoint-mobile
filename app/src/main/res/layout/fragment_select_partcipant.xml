@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nilepoint.monitorevaluatemobile.participant.SelectParticipantFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+   <!-- <Button
+        android:drawableTop="@drawable/bar_code_icon"
+        android:background="@color/zxing_transparent"
+        android:id="@+id/scan_participant_button_activity"
+        android:text="Scan barcode"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
+    <include
+        layout="@layout/client_searchbar"
+        android:id="@+id/select_participant_searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/select_participant_or_group_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:isScrollContainer="false"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

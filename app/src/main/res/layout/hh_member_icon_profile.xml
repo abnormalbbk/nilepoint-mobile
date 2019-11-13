@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
+    android:id="@+id/card_view_hh_member"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/profile_hh_member_picture"
+        android:src="@drawable/user_photo_filler"
+        android:background="@drawable/circle"
+        android:layout_width="64dp"
+        android:layout_height="64dp" />
+
+    <TextView
+        android:id="@+id/profile_hh_member_name"
+        android:text="First Name"
+        android:theme="@style/hhMembersName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/profile_hh_member_relation"
+        android:theme="@style/hhMembersRelationship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+    </android.support.v7.widget.CardView>

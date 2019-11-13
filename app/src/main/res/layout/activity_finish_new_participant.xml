@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_review_sv"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/activity_review_new_participant"
+            android:orientation="vertical"
+            android:fitsSystemWindows="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.nilepoint.monitorevaluatemobile.update.FinishNewParticipantActivity">
+
+            <include
+                layout="@layout/app_bar_basic"
+                android:id="@+id/form_bar_participant_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/review_participant_content"
+        android:text="You have created new update profiles for:"
+        android:theme="@style/reviewContentText"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/review_participant_list_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+        <!-- Goes under recyclerview and allows additional household members -->
+        <View style="@style/Divider"/>
+
+        <LinearLayout
+            android:id="@+id/add_member_ll"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/review_add_hh_member"
+                android:src="@drawable/add_new_small"
+                android:layout_gravity="left"
+                android:layout_width="48dp"
+                android:layout_height="48dp"/>
+
+            <TextView
+                android:id="@+id/review_add_hh_member_text"
+                android:text="Add Household Member"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:theme="@style/participantNameCardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <View style="@style/Divider"/>
+
+
+        <Button
+            android:id="@+id/done_button_review_participant"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            style="@style/defaultButton"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="@string/done" />
+
+        </LinearLayout>
+</ScrollView>
+

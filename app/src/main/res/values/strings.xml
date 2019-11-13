@@ -1,0 +1,156 @@
+<resources>
+
+    <!-- LoginActivity string res -->
+    <string name="LoginActivity_username">User Name</string>
+    <string name="LoginActivity_button">Sign In</string>
+    <string name="LoginActivity_forgotContent">Forgot your username?\nContact</string>
+    <string name="LoginActivity_help_link" translatable="false">help@nilepoint.com</string>
+    <string name="LoginActivity_error_null">Please enter a username</string>
+    <string name="LoginActivityAddUser">Add a user</string>
+
+    <!--Sliding Drawer String resources -->
+    <string name="Drawer_home">Home</string>
+    <string name="Drawer_Bluetooth">Bluetooth Peers</string>
+    <string name="Drawer_Logs">Debug Logs</string>
+    <string name="Drawer_DTN">Data Synchronization</string>
+    <string name="Drawer_clientList">Participant List</string>
+    <string name="Drawer_queue">Upload Queue</string>
+    <string name="Drawer_oauth">Init via Oauth</string>
+    <string name="Drawer_settings">Settings</string>
+    <string name="Drawer_signOut">Sign Out</string>
+    <string name="Drawer_peerList">Peer Sync</string>
+    <string name="name_placeholder">Jane Participant</string>
+    <string name="title_activity_home">Xindicate Track</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Home Activity navigation options -->
+    <string name="home_activity_find_household">Find a household</string>
+    <string name="home_activity_add_household">Add New Household</string>
+    <string name="home_activity_find_group">Find a group</string>
+    <string name="home_activity_add_group">Add a group</string>
+
+    <!-- Search functionality -->
+    <string name="search_hint">Search participants</string>
+    <string name="app_label">Xindicate</string>
+
+    <!-- Settings -->
+    <string name="action_settings">Settings</string>
+    <string name="action_authenticate">Authenticate Oauth</string>
+    <string name="logout_dialog">Are you sure you want to sign out?</string>
+
+    <!-- Add Participant Form strings -->
+    <string name="form_next">Next</string>
+    <string name="form_back">&lt;Back</string>
+
+    <!-- Consent content -->
+    <string name="form_consent_title">Consent</string>
+    <string name="form_consent_secondary_title">Consent</string>
+    <string name="form_consent_content_intro">This information given will be kept confidential and only aggregate data will be used for programmatic decision making and provided to donors. No decision will be made based on personal data.</string>
+    <string name="form_consent_agreement1">1. Do we have your consent to collect the information and only share the aggregated or analyzed data? We will not share any personal information.</string>
+    <string name="form_consent_agreement2">2. Do we have your consent to use GIS codes for spatial analysis and plotting the data?</string>
+    <string name="form_consent_button_text">Sign agreement</string>
+    <string name="form_consent_error_msg">You must obtain consent before continuing.</string>
+
+
+    <!-- Review Participant -->
+    <string name="review_title">Complete</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--InternalSetting labels-->
+    <string name="settings_title">Settings</string>
+    <string name="settings_profile">Profile </string>
+    <!--When options need to be added here, make sure to update the fragment and reference the position-->
+    <!-- TODO remove and replace with Realm objects -->
+    <string-array name="settings_options">
+        <item name="settings_profile">Profile</item>
+        <item name="settings_language">Language</item>
+        <item name="settings_region">Geographic Regions</item>
+        <item name="settings_users_login">Users shown at login</item>
+        <item name="settings_environment">Environment</item>
+        <item name="settings_version">Version 1.1.0.0</item>
+    </string-array>
+
+    <!-- Text for settings-->
+
+
+    <!-- Language options labels -->
+    <string-array name="language_options">
+        <item name="english">English</item>
+        <item name="spanish">Spanish</item>
+    </string-array>
+
+    <!-- New User flow strings -->
+
+    <!-- Buttons -->
+    <string name="next_step_wizard">Next</string>
+    <string name="finish_wizard">Get Started</string>
+
+    <!-- Participant Profile-->
+    <string name="profile"> Profile </string>
+    <string name="hh_info"> | Household Info | </string>
+    <string name="activities">  Activities </string>
+
+    <!-- Activity Content -->
+    <string name="language_wizard">Initialization Settings</string>
+    <string name="personal_info_wizard">Your Name</string>
+    <string name="photo_wizard">Add a photo of yourself (optional)</string>
+    <string name="wizard_complete_content">Your preferences have been saved and you are ready to use WorldLink Track.\n\n If you need to change anything, just go to Settings on the menu.</string>
+
+    <!-- Personal Information -->
+
+    <!--Toolbar headings-->
+    <string name="select_group">Select Group</string>
+    <string name="language_wizard_toolbar">Set Up</string>
+    <string name="personal_info_wizard_toolbar">Personalize</string>
+    <string name="photo_wizard_toolbar">Add Photo</string>
+    <string name="country_wizard_toolbar">Country</string>
+    <string name="cluster_wizard_toolbar">Cluster</string>
+    <string name="community_wizard_toolbar">Community</string>
+    <string name="complete_wizrd_toolbar">Complete</string>
+    <string name="title_activity_find_partcipant_host">FindPartcipantHostActivity</string>
+    <string name="or">OR</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="find_a_participant_heading">Find a Participant</string>
+    <string name="barcode_activity_instructions">Hold your ID card in front of your phone to scan the barcode.</string>
+    <string name="scan_barcode_toolbar">Scan Barcode on ID Card</string>
+    <string name="client_name_or_id_number">Client Name or ID number</string>
+    <string name="cant_find_participant_message">Unable to find associated participant</string>
+    <string name="number_in_household">Number in household</string>
+    <string name="is_head_of_household">Head of Household?</string>
+    <string name="residence">Residence</string>
+    <string name="household_members">Household Members</string>
+    <string name="add">Add</string>
+    <string name="unknown">unknown</string>
+    <string name="head_of_household">Head of Household</string>
+    <string name="group">Manage Groups</string>
+    <string name="search_hint_groups">Search by Name, Cluster, or Community</string>
+    <string name="search_hint_text">Search by Name, FH Code, or Community</string>
+    <string name="find_members_to_add">Find members to add</string>
+    <string name="add_members">Add members</string>
+    <string name="remove_members">Remove members</string>
+    <string name="activity_details">Activity Details</string>
+    <string name="edit">Edit</string>
+    <string name="activity_date">Activity Date:</string>
+    <string name="done">Done</string>
+    <string name="select_project">Select Project</string>
+    <string name="add_participant">Add Participant</string>
+    <string name="remove_participant">Remove Participant</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="confirm">Confirm</string>
+    <string name="receive">Receive</string>
+    <string name="defualt_participant_code">Participant Code Pending</string>
+    <string-array name="status_array">
+        <item>In Process</item>
+        <item>Planned</item>
+        <item>Completed</item>
+    </string-array>
+    <string name="env_restart">Env changed, please restart this application.</string>
+    <string name="title_activity_peer_init">Data Synchronization</string>
+    <string name="app_name">Xindicate</string>
+
+</resources>

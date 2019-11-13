@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_users_shown_at_login_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.nilepoint.monitorevaluatemobile.settings.UsersShownAtLoginSettingsActivity">
+
+    <include
+        layout="@layout/app_bar_basic"
+        android:id="@+id/users_login_settings_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/users_login_settings_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="false"
+            />
+
+
+</LinearLayout>

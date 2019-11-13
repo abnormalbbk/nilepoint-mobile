@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/select_card_view_participant"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:elevation="1dp">
+
+    <!--Contains all of the informtion, splits card between picture and information-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <!--profile picture -->
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/select_participant_photo"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
+            android:src="@drawable/add_photo"/>
+
+        <!--Layout for text information about update -->
+        <LinearLayout
+            android:id="@+id/select_participant_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@id/select_participant_photo"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/select_participant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/participantNameCardview"
+                android:text="First Last"/>
+            <TextView
+                android:id="@+id/select_participant_neighborhood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Neighborhood"/>
+
+            <TextView
+                android:id="@+id/select_participant_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id num"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/selected_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        <ImageButton
+            android:id="@+id/deselect_participant_from_activity_button"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
+

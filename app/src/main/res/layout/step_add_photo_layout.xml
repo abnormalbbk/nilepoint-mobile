@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_text_new_user"
+        android:text="Placeholder text!!!!"
+        android:layout_marginLeft="@dimen/new_user_flow_text_top"
+        android:layout_marginTop="@dimen/new_user_flow_text_top"
+        android:theme="@style/newUserText"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/new_user_flow_text_top"
+        android:orientation="vertical">
+
+
+        <ImageButton
+            android:layout_width="126dp"
+            android:layout_height="96dp"
+            android:id="@+id/new_user_add_photo_button"
+            android:src="@drawable/camera_button_new_user"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="#0000"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user_add_photo_text"
+            android:text="Add a Photo"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:theme="@style/newUserText"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

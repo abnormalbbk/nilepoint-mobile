@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_select_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nilepoint.monitorevaluatemobile.tracking.SelectActivityActivity"
+    android:weightSum="1">
+
+    <include
+        layout="@layout/app_bar_basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/activity_select_activity_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabMode="fixed" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activity_select_activity_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="416dp"
+        android:descendantFocusability="blocksDescendants"
+        android:isScrollContainer="true"
+        app:layout_anchor="@id/toolbar_groups"
+        app:layout_anchorGravity="bottom|end"
+        android:layout_weight="0.99">
+
+    </android.support.v4.view.ViewPager>
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/add_tracked_activity"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:srcCompat="@drawable/add_new_small" />-->
+
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_participant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nilepoint.monitorevaluatemobile.update.AddParticipantActivity">
+
+    <include
+        layout="@layout/app_bar_form"
+        android:id="@+id/form_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+        <RelativeLayout
+            android:id="@+id/nav_buttons_wizard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:layout_below="@id/form_bar">
+            
+            <Button
+                android:id="@+id/wizard_next_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/form_next"
+                style="@style/defaultButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_alignParentBottom="true" />
+
+
+
+            </RelativeLayout>
+
+
+</RelativeLayout>

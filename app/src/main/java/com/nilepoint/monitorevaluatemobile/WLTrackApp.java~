@@ -1,0 +1,441 @@
+package com.nilepoint.monitorevaluatemobile;
+
+import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
+import android.util.Log;
+
+import com.nilepoint.amqp.AMQPConfiguration;
+import com.nilepoint.amqp.AMQPConnection;
+import com.nilepoint.amqp.Endpoint;
+import com.nilepoint.amqp.messages.MapMessage;
+import com.nilepoint.api.ExchangeAPIManager;
+import com.nilepoint.api.MobileDevice;
+import com.nilepoint.formbuilder.FormService;
+import com.nilepoint.model.Area;
+import com.nilepoint.model.Device;
+import com.nilepoint.model.Form;
+import com.nilepoint.model.FormElement;
+import com.nilepoint.model.FormElementType;
+import com.nilepoint.model.FormSection;
+import com.nilepoint.model.StoredForm;
+import com.nilepoint.model.User;
+import com.nilepoint.monitorevaluatemobile.admin.FirstStartupRunner;
+import com.nilepoint.monitorevaluatemobile.forms.FormKeyIDs;
+import com.nilepoint.monitorevaluatemobile.logging.RemoteLogger;
+import com.nilepoint.monitorevaluatemobile.persistence.Environment;
+import com.nilepoint.monitorevaluatemobile.services.HouseholdService;
+import com.nilepoint.monitorevaluatemobile.services.ParticipantService;
+import com.nilepoint.monitorevaluatemobile.services.DTNService;
+import com.nilepoint.monitorevaluatemobile.services.LoggingService;
+import com.nilepoint.monitorevaluatemobile.services.UpdateRoutingService;
+import com.nilepoint.monitorevaluatemobile.stats.StatisticsManager;
+import com.nilepoint.monitorevaluatemobile.user.UserSession;
+import com.nilepoint.persistence.Datastore;
+import com.nilepoint.serialization.ProtostuffManager;
+
+import org.apache.log4j.BasicConfigurator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
+import io.paperdb.Paper;
+import io.realm.Realm;
+
+/**
+ * Created by ashaw on 3/1/17.
+ */
+
+public class WLTrackApp extends Application {
+    public static String TAG = "MonitorEvaluateApp";
+    FormService formService;
+    public static DTNService dtnService;
+    public static ParticipantService participantService;
+    public static HouseholdService householdService;
+    public static UpdateRoutingService participantUpdateService;
+    public static LoggingService log;
+
+    static AMQPConnection<MapMessage> messageConnection;
+
+    public static UserSession session;
+    public static Datastore dataStore;
+    public static Device device;
+
+    public RemoteLogger logger;
+
+    private final static Long DEFAULT_FORM_VERSION = 11L;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        // Paper is a simple key value store, we'll use it over realm if we don't need query
+        // functionality.
+
+        Paper.init(this);
+
+        if (!Paper.book().exist("device")){
+            Log.i(TAG, "Device doesn't exist, creating it");
+            createDevice();
+            Log.i(TAG, "Created: " + Paper.book().read("device"));
+        }
+
+        logger = new RemoteLogger();
+
+        //Bugsee.launch(this, "6c3fe64c-1a7f-409b-b986-f474e0025198");
+
+        BasicConfigurator.configure();
+
+        super.onCreate();
+
+        Realm.init(this);
+
+        dataStore = Datastore.init(this);
+
+        log = LoggingService.getInstance();
+
+        /**
+         * If this is the first time the app is starting up we create the
+         * stuff needed.
+         */
+
+        FirstStartupRunner fsr = new FirstStartupRunner();
+
+        if (fsr.isFirstStartup()){
+            fsr.startup();
+        }
+
+        List<Environment> environments = new ArrayList<>();
+
+        Environment dev = new Environment("Development",
+                "23.239.9.64",
+                "bedrock",
+                "n1l3point!",
+                "https://np.stackdump.in:8443/",
+                "abc123"
+        );
+
+        environments.add(dev);
+
+        Paper.book().write("environments", environments);
+        Paper.book().write("environment", dev);
+
+        if (Paper.book().exist("environment")) {
+
+            Environment environment = Paper.book().read("environment");
+
+            ExchangeAPIManager.getInstance().setApiKey(environment.getExchangeKey());
+            ExchangeAPIManager.getInstance().setEndpointUrl(environment.getExchangeHostname());
+
+            ProtostuffManager<Form> psManager = new ProtostuffManager<>(Form.class);
+
+<<<<<<< HEAD
+            AMQPConfiguration<Form> formAMQPConfiguration = new AMQPConfiguration<>()
+                    .endpoint(new Endpoint(environment.getAmqpHostname()))
+                    .username(environment.getAmqpUsername())
+                    .password(environment.getAmqpPassword())
+                    .exchangeType("direct")
+                    .deserializer(psManager)
+                    .serializer(psManager)
+                    .ack(true)
+                    .exchange("formExchange")
+                    .queue("form-" + dataStore.getDevice().getId());
+=======
+       /* if (!Paper.book().exist("device")) {
+            MobileDevice apiDevice = new MobileDevice(deviceId, name);
+>>>>>>> 4cee1ac8f466dae06ee93878a1ef42cc61600378
+
+            formService = new FormService(this, formAMQPConfiguration);
+
+<<<<<<< HEAD
+        }
+=======
+            Paper.book().write("device", apiDevice);
+        } */
+>>>>>>> 4cee1ac8f466dae06ee93878a1ef42cc61600378
+
+        StatisticsManager.startTask();
+
+        Realm realm = null;
+
+        try {
+
+            realm = Realm.getDefaultInstance();
+
+            Realm.compactRealm(realm.getConfiguration());
+
+            StoredForm participantForm = realm
+                    .where(StoredForm.class)
+                    .equalTo("name", "Participant")
+                    .greaterThanOrEqualTo("version", DEFAULT_FORM_VERSION).findFirst();
+
+            // no form, create it.
+            if (participantForm == null) {
+                createParticipantForm();
+            }
+
+            //bootstrap the household form.
+            StoredForm householdForm = realm
+                    .where(StoredForm.class)
+                    .equalTo("name", "Household")
+                    .greaterThanOrEqualTo("version", DEFAULT_FORM_VERSION).findFirst();
+
+            if (householdForm == null) {
+                createHouseholdForm();
+            }
+
+            createDTN();
+            queueConnect();
+
+            participantService = new ParticipantService();
+
+            householdService = new HouseholdService();
+
+
+            logger.info(TAG, "Wordlink Track Started - v 1.0");
+
+        } catch ( Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (realm != null) {
+                realm.close();
+            }
+        }
+    }
+
+    public static void afterLogin(Context context, User user){
+        /*MobileDevice apiDevice = new MobileDevice((String) Paper.book().read("device.id"),
+                (String) Paper.book().read("device.name"),
+                user.getFirstName() + " " + user.getLastName());
+
+        apiDevice.register();*/
+
+        //Paper.book().write("device", apiDevice);
+
+        UserSession.userId = user.getId();
+
+        MobileDevice apiDevice  = Paper.book().read("device");
+
+        apiDevice.setLastUser(user.getFirstName() + " " + user.getLastName());
+
+        Paper.book().write("device", apiDevice);
+
+
+        Environment environment = Paper.book().read("environment");
+
+        // update connection
+        ProtostuffManager<MapMessage> meessagePSManager = new ProtostuffManager<>(MapMessage.class);
+
+        AMQPConfiguration<MapMessage> participantAMQPConfiguration = new AMQPConfiguration<>()
+                .endpoint(new Endpoint(environment.getAmqpHostname()))
+                .username(environment.getAmqpUsername())
+                .password(environment.getAmqpPassword())
+                .exchangeType("topic")
+                .deserializer(meessagePSManager)
+                .serializer(meessagePSManager)
+                .ack(true)
+                .exchange("participantExchange")
+                .topic("country.all")
+                .topic("cluster.all")
+                .queue("participant-" + apiDevice.getId());
+
+
+        for (Area area : user.getAreas()){
+            Log.i(TAG, "Subscribing to topic " + "area." + area.getId());
+
+            participantAMQPConfiguration.topic("area." + area.getId());
+        }
+
+        System.out.println("Topics: " + participantAMQPConfiguration.getTopics());
+
+        participantUpdateService = new UpdateRoutingService(context, participantAMQPConfiguration);
+    }
+    private void createDTN(){
+        dtnService = new DTNService(this);
+    }
+
+    private void createParticipantForm(){
+        Form form = new Form("Participant");
+        form.setVersion(DEFAULT_FORM_VERSION);
+
+        //FormSection sectionPrimaryInfo = new FormSection("Primary Information");
+
+        //The section that will go on the first page. It specifies who the participant is
+
+        FormSection step1 = new FormSection("Add household member");
+        step1.setLabel("Add Household Member");
+        form.addSection(step1);
+
+        step1.addElement(new FormElement(FormElementType.TEXT, "givenName", "Given Name"));
+        step1.addElement(new FormElement(FormElementType.TEXT, "fatherName", "Family Name"));
+        step1.addElement(new FormElement(FormElementType.TEXT, "preferredName","Preferred Name (optional)"));
+
+        FormElement headRelation = new FormElement(FormElementType.CHOICE, "houseHeadRealation", "Relation to head of household");
+        headRelation.setChoices(Arrays.asList(new String[] {"Husband","Wife", "Son", "Daughter", "Other Adult", "Other Child"})); //just a sample for now
+        step1.addElement(headRelation);
+
+        step1.addElement(new FormElement(FormElementType.CHECK, FormKeyIDs.ESTIMATED_AGE, "Is Age Estimated?"));
+        step1.addElement(new FormElement(FormElementType.DATE, "birthday", "Birthday"));
+
+
+        FormElement genderChoice = new FormElement(FormElementType.CHOICE, "gender", "Gender");
+            genderChoice.setChoices(Arrays.asList(new String[] {"Male","Female"}));
+            step1.addElement(genderChoice);
+
+
+        /**
+         * Send it through the formService to be stored.
+         */
+        formService.messageReceived(form);
+    }
+
+    /***
+     * Create a new household form - needed before making participants
+     */
+    private void createHouseholdForm(){
+        Form form = new Form("Household");
+        form.setVersion(DEFAULT_FORM_VERSION);
+
+        //Basic household information
+        FormSection step1 = new FormSection("Create a new household");
+        step1.setLabel("Add Head of Household");
+        form.addSection(step1);
+        FormElement getConsent = new FormElement(FormElementType.CHECK,"consent", "Consent Obtained?");
+        getConsent.setType(FormElementType.CHECK);
+        step1.addElement(getConsent);
+        step1.addElement(new FormElement(FormElementType.TEXT, "givenName", "Given Name"));
+        step1.addElement(new FormElement(FormElementType.TEXT, "fatherName", "Family Name"));
+        step1.addElement(new FormElement(FormElementType.TEXT, "preferredName","Preferred Name (optional)"));
+
+        //birthday info TODO add approximate age slider
+        step1.addElement(new FormElement(FormElementType.DATE, "birthday", "Birthday"));
+        FormElement genderChoice = new FormElement(FormElementType.CHOICE, "gender", "Gender")
+                .addChoices("Male","Female");
+        step1.addElement(genderChoice);
+
+        step1.addElement(new FormElement(FormElementType.TEXT, "phoneNumber", "Phone Number (optional)"));
+        step1.addElement(new FormElement(FormElementType.TEXT, "psnpNumber", "PSNP Number (optional)"));
+
+
+        //Location information
+        FormSection step2 = new FormSection("Location");
+        step2.setLabel("Specify Household Location");
+        form.addSection(step2);
+/*
+        FormElement clusterPicker = new FormElement(FormElementType.CHOICE, "cluster", "Cluster");
+
+        setElementChoices(clusterPicker,new String[]{}, step2);
+
+        String[] communities = {};
+        FormElement communityPicker = new FormElement(FormElementType.CHOICE, "community", "Community");
+        setElementChoices(communityPicker,communities,step2);
+
+        String[] villages = {};
+        setElementChoices(new FormElement(FormElementType.CHOICE, "village","Gott (optional)"), villages, step2);
+*/
+        /*String[] gpsCoords = {"4.04, 21.75", "4.44, 15.26", "9.14, 40.48"};
+        setElementChoices(new FormElement(FormElementType.CHOICE, "gpsCoords", "GPS Coordinates (optional)"), gpsCoords, step2);
+
+        //Household data
+        FormSection step3 = new FormSection("Household data");
+        step3.setLabel("Specify Member Numbers");
+
+        form.addSection(step3);
+
+        String[] oneThroughTen = new String[]{"1","2","3","4","5","6","7","8","9","10"};
+
+        step3.addElement(new FormElement(FormElementType.CHOICE, "adultsF", "Female Adults 18+").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenF1", "Female Children 5-17").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenF2", "Female Children 24-59 Months").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenF3", "Female Children 6-23 Months").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenF4", "Female Children 0-5 Months").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "adultsM", "Male Adults 18+").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenM1", "Male Children 5-17").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenM2", "Male Children 24-59 Months").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenM3", "Male Children 6-23 Months").addChoices(oneThroughTen));
+        step3.addElement(new FormElement(FormElementType.CHOICE, "childrenM4", "Male Children 0-5 Months").addChoices(oneThroughTen));
+        */
+        formService.messageReceived(form);
+
+
+    }
+
+    /**
+     * Sets up a new choice element with passed in choices
+     * @param fe a choice element
+     * @param choices array of choices
+     * @param fs its parent section
+     */
+    public void setElementChoices(FormElement fe, String[] choices, FormSection fs){
+        fe.setChoices(Arrays.asList(choices));
+        fs.addElement(fe);
+    }
+
+    public static void send(MapMessage message){
+        if (messageConnection != null) {
+            messageConnection.sendAsync(message);
+        } else {
+            Log.e(TAG, "Cannot send message " + message + " connection is null");
+        }
+    }
+
+    public FormService getFormService() {
+        return formService;
+    }
+
+    public void setFormService(FormService formService) {
+        this.formService = formService;
+    }
+
+    public void queueConnect(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (!isNetworkAvailable()){
+                    try {
+                        Thread.sleep(5000);
+                    } catch (Exception ex){
+
+                    }
+
+                    queueConnect();
+                    return;
+                }
+                try {
+                    messageConnection.connect();
+                } catch (Throwable e){
+                    try {
+                        Thread.sleep(5000);
+                    } catch (Exception ex){
+
+                    }
+                    queueConnect();
+                }
+            }
+        }).start();
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+
+    public void createDevice(){
+
+        final String deviceId = UUID.randomUUID().toString();
+
+        Paper.book().write("device.id", deviceId);
+        Paper.book().write("device.name", Build.MODEL);
+
+        MobileDevice apiDevice = new MobileDevice(deviceId, Build.MODEL);
+
+        Paper.book().write("device", apiDevice);
+    }
+}

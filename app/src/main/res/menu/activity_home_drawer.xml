@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--To add another item onto the menu, simply add a new item below and create a Fragment class fo -->
+        <group  android:id="@+id/home_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/dashboard"
+                    android:background="@color/colorWhite"
+                    android:title="@string/Drawer_home" />
+        </group>
+        <!--<group  android:id="@+id/log_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_log"
+                    android:icon="@drawable/ic_people_white_24dp"
+                    android:title="@string/Drawer_Logs" />
+        </group>-->
+        <group  android:id="@+id/dtn_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_dtn"
+                    android:icon="@drawable/ic_people_white_24dp"
+                    android:title="@string/Drawer_DTN" />
+        </group>
+        <group  android:id="@+id/clientList_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_clientList"
+                    android:icon="@drawable/ic_people_white_24dp"
+                    android:title="@string/Drawer_clientList" />
+        </group>
+
+        <!--<group  android:id="@+id/peer_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_peer_init"
+                    android:icon="@drawable/ic_phone_black_18dp"
+                    android:title="@string/Drawer_peerList" />
+        </group>-->
+        <!--<group  android:id="@+id/navQueue_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_queue"
+                    android:icon="@drawable/ic_cloud_upload_white_24dp"
+                    android:title="@string/Drawer_queue" />
+        </group>-->
+        <group  android:id="@+id/settings_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_white_24dp"
+                    android:title="@string/Drawer_settings" />
+        </group>
+        <!--<group  android:id="@+id/auth_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_authenticate"
+                    android:icon="@drawable/ic_cloud_upload_white_24dp"
+                    android:title="@string/Drawer_oauth" />
+        </group>-->
+        <group  android:id="@+id/signout_item" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/nav_signOut"
+                    android:icon="@drawable/ic_exit_to_app_white_24dp"
+                    android:title="@string/Drawer_signOut" />
+        </group>
+
+        <group android:id="@+id/dividerExtra" android:checkableBehavior="none">
+            <item
+                android:title="  "
+                />
+        </group>
+
+
+
+</menu>

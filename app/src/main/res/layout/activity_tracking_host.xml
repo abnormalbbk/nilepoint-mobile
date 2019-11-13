@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tracking_host"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.nilepoint.monitorevaluatemobile.activity_tracking.ActivityTrackingHostActivity">
+
+    <include
+        layout="@layout/app_bar_basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_tracking_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:layout_weight="1">
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/activity_tracking_next_button"
+        android:text="Next"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+
+</LinearLayout>

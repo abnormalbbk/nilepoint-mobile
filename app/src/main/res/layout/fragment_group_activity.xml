@@ -1,0 +1,47 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.nilepoint.monitorevaluatemobile.group.GroupActivityFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/participantIdProfile"
+        android:layout_margin="20dp"
+        android:text="Recent Activity" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="No activities yet for this group!" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/group_activity_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/floating_add_button"
+        android:id="@+id/group_activity_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_anchor="@id/group_activity_recycler"
+        app:layout_anchorGravity="bottom|right"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

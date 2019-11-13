@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Fields for name entry field TODO use resource for hinting, add underline for input fields-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/new_user_editText_top"
+        android:theme="@style/newUserEditText"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_text_new_user_personalize"
+            android:layout_marginTop="@dimen/new_user_flow_text_top"
+            android:theme="@style/newUserText"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user_first_name"
+            android:textColor="@color/newUserEditText"
+            android:hint="First Name"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user_last_name"
+            android:textColor="@color/newUserEditText"
+            android:hint="Last Name"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user_email_address"
+            android:textColor="@color/newUserEditText"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

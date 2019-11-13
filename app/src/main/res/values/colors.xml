@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#333333</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ACB937</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorDivider">#999999</color>
+    <!-- Homescreen card colors -->
+    <color name="colorHomeCard1">#ACB937</color>
+    <color name="colorHomeCard2">#b8ca52</color>
+    <color name="colorHomeCard3">#ef9e20</color>
+    <color name="colorHomeCard4">#ebb354</color>
+    <color name="lightTeal">#30ad8c</color>
+    <color name="drawerColor">#191919</color>
+
+    <!-- colors for textField -->
+    <color name="colorHintText">#E5E5E5</color>
+    <color name="colorFieldSelect">#999999</color>
+
+    <!-- colors for buttons -->
+    <color name="colorButtonText">@color/colorWhite</color>
+    <color name="colorButtonPrimary">#ACB937</color>
+    <color name="colorShadowColor">#FAFAFA</color>
+
+    <!-- Text formatting colors -->
+    <color name="colorLinkText">#3498DB</color>
+    <color name="colorBackText">#CCCCCC</color>
+    <color name="colorSecondaryText">#999999</color>
+    <color name="colorInfoText">#666666</color>
+    <color name="colorActionBar">#333333</color>
+
+    <!-- colors for the new user flow theme -->
+    <color name="newUserActionBarBackground">#222222</color>
+    <color name="newUserColorBackground">#3D3D3D</color>
+    <color name="newUserButtonBackground">#ACB937</color>
+    <color name="newUserTextColorHint">#666666</color>
+    <color name="newUserEditText">#999999</color>
+
+    <color name="viewfinder_border">#ACB937</color>
+
+    <color name="purple">#9C27B0</color>
+
+    <color name="red">#ff0000</color>
+
+</resources>

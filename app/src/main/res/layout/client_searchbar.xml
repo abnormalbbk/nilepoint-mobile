@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/client_list_searchview"
+    android:elevation="2dp"
+    android:layout_gravity="center"
+    android:iconifiedByDefault="false"
+    android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"
+    android:layout_width="match_parent"
+    android:inputType="textFilter"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:layout_height="wrap_content">
+</SearchView>

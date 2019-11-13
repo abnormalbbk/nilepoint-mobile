@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_participant"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:elevation="1dp">
+
+    <!--Contains all of the informtion, splits card between picture and information-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <!--profile picture -->
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/list_participant_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:maxHeight="80dp"
+            android:maxWidth="80dp"
+            android:scaleType="centerCrop"
+            android:clickable="false"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@drawable/add_photo"/>
+
+        <!--Layout for text information about update -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/list_participant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/participantNameCardview"
+                android:text="First Last"/>
+            <TextView
+                android:id="@+id/list_participant_neighborhood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Neighborhood"/>
+
+            <TextView
+                android:id="@+id/list_participant_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id num"/>
+
+
+            <!-- Linear layout to include icon -->
+        <!--    <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginRight="1dp"
+                    android:src="@drawable/ic_phone_black_18dp"/>
+            <TextView
+                android:id="@+id/list_participant_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:theme="@style/participantPhoneCardview"
+                android:text="555-555-5555"/>
+            </LinearLayout> -->
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    
+
+</android.support.v7.widget.CardView>
+

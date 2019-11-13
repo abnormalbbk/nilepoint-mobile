@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Xindicate</string>
+
+    <!-- LoginActivity string res -->
+<string name="LoginActivity_username">Nombre de usuario</string>
+<string name="LoginActivity_button">iniciar sesión</string>
+<string name="LoginActivity_forgotContent">¿Olvidó su contraseña?\nPóngase en contacto con</string>
+<string name="LoginActivity_help_link">help@nilepoint.com</string>
+<string name="LoginActivity_error_null">Introduzca un nombre de usuario</string>
+
+    <!--Sliding Drawer String resources -->
+<string name="Drawer_home">Inicio</string>
+<string name="Drawer_clientList">Lista de clientes</string>
+<string name="Drawer_settings">Ajustes</string>
+    <string name="name_placeholder">Jane Participant</string>
+<string name="title_activity_home">Xindicate Track</string>
+
+<string name="navigation_drawer_open">Open navigation drawer</string>
+<string name="navigation_drawer_close">Close navigation drawer</string>
+
+<string name="action_settings">Ajustes</string>
+
+    <!-- Add Participant Form strings -->
+<string name="form_next">Siguiente</string>
+<string name="form_back">&lt;Atrás</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--InternalSetting labels-->
+<string name="settings_title">Ajustes</string>
+    <!--When options need to be added here, make sure to update the fragment and reference the position-->
+<string-array name="settings_options">
+<item name="settings_profile">Perfil</item>
+<item name="settings_language">Idioma</item>
+<item name="settings_notification">Notificaciones</item>
+<item name="settings_region">Regiones</item>
+<item name="settings_users_login">Users shown at login</item>
+</string-array>
+
+    <!-- Language options labels -->
+<string-array name="language_options">
+<item name="english">English</item>
+<item name="spanish">Español</item>
+</string-array>
+    <string name="Drawer_signOut">cerrar sesión</string>
+</resources>

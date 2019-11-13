@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nilepoint.monitorevaluatemobile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:name=".WLTrackApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".participant.AddParticipantActivity" />
+        <activity android:name=".settings.SettingsActivity" />
+        <activity android:name=".participant.ParticipantHouseholdFormActivity" />
+        <activity android:name=".participant.FinishNewParticipantActivity" />
+        <activity android:name=".persistence.SettingHostActivity" />
+        <activity android:name=".new_user.NewUserWizardHostActivity" />
+        <activity android:name=".admin.FirstSetupWizardHostActivity" />
+        <!-- clientList needs to allow for search functionality -->
+        <activity android:name=".participant.ParticipantListActivity">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QueueActivity" />
+        <activity android:name=".camera.SelectPhotoActivity" />
+        <activity
+            android:name=".participant.ParticipantProfileActivity"
+            android:label="" />
+        <activity android:name=".ConsentInfoActivity" />
+        <activity android:name=".ObtainConsentActivity" />
+        <activity android:name=".participant.ReviewNewParticipantActivity" />
+        <activity android:name=".camera.TakePhotoActivity" />
+        <activity android:name=".settings.ProfileSettingsActivity" />
+        <activity android:name=".settings.UsersShownAtLoginSettingsActivity" />
+        <activity android:name=".new_user.OAuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.nilepoint.monitorevaluatemobile" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".settings.RegionsSettingsActivity" />
+        <activity android:name=".dtn.BluetoothInformationActivity" />
+        <activity android:name=".settings.DTNSettingsActivity" />
+        <activity android:name=".logging.LogListActivity" />
+        <activity
+            android:name=".participant.FindPartcipantHostActivity"
+            android:label="@string/title_activity_find_partcipant_host"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity_tracking.ActivityTrackingActivity" />
+        <activity
+            android:name=".activity_tracking.ActivityTrackingHostActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".participant.CustomScannerActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+        <activity android:name=".participant.BarcodeScannerHostActivity" />
+        <activity android:name=".group.GroupListActivity" />
+        <activity android:name=".group.GroupInfoHostActivity" />
+        <activity android:name=".group.ManageGroupMembersActivity" />
+        <activity android:name=".tracking.ActivityDetailsHost" />
+        <activity android:name=".tracking.SelectProjectsHostActivity" />
+        <activity android:name=".tracking.SelectParticipantHostActivity" />
+        <activity android:name=".tracking.SelectGroupHostActivity" />
+        <activity android:name=".participant.SelectMultipleParticipantHostActivity" />
+        <activity android:name=".tracking.SelectActivityActivity" />
+        <activity android:name=".distributions.DistributionTrackingActivity" />
+        <activity android:name=".tracking.ChooseAddParticipantTypeActivity" />
+        <activity android:name=".tracking.ConfirmActivityActivity" />
+        <activity android:name=".tracking.ConfirmDistributionActivity" />
+        <activity android:name=".init.ConnectedPeerActivity" />
+        <activity android:name=".init.SelectUserActivity" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="68a7457e2826bed058ccf8fc6e4e765860a1821b" />
+        <service
+            android:name=".location.GeoTagService"
+            android:icon="@drawable/bugsee_icon_bug_1"
+            android:label="Geo Tag Service" />
+
+        <activity
+            android:name=".init.DataSyncActivity"
+            android:label="@string/title_activity_peer_init"
+            android:theme="@style/AppTheme" />
+    </application>
+
+</manifest>
